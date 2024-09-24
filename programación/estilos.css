@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(to bottom, #000000, #1512b8);
+}
+
+.contenedor {
+    width: 75%;
+    margin: 0 auto;
+    padding: 150px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 06px;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 620px;
+    height: 150px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 03%;
+}
+
+.informacion {
+    margin: 20px;
+    text-align: center;
+}
+
+.informacion h1 {
+    font-size:  48px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 90px;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 08px 03px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #2f9cf5;
+    font-size: 20px;
+}

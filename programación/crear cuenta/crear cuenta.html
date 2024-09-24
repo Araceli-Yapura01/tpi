@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crear una Cuenta</title>
+	<link rel="stylesheet" href="estilo2.css">
+</head>
+<body>
+	<div class="contenedor">
+		<h1 style="font-size: 50px; color: #f9f9f9; text-align: center;">Crear una Cuenta</h1>
+		<form>
+			<section>
+				<h2>Datos Personales</h2>
+				<div class="grupo">
+					<label for="nombre">Nombre:</label>
+					<input type="text" id="nombre" required>
+				</div>
+				<div class="grupo">
+					<label for="apellido">Apellido:</label>
+					<input type="text" id="apellido" required>
+				</div>
+				<div class="grupo">
+					<label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+					<input type="date" id="fecha-nacimiento" required>
+				</div>
+				<div class="grupo">
+					<label for="genero">Género:</label>
+					<select id="genero" required>
+						<option value="">Seleccione un género</option>
+						<option value="masculino">Masculino</option>
+						<option value="femenino">Femenino</option>
+						<option value="otro">Otro</option>
+					</select>
+				</div>
+			</section>
+			<section>
+				<h2>Datos de Contacto</h2>
+				<div class="grupo">
+					<label for="correo">Correo electrónico:</label>
+					<input type="email" id="correo" required>
+				</div>
+				<div class="grupo">
+					<label for="telefono">Teléfono:</label>
+					<input type="tel" id="telefono" required>
+				</div>
+			</section>
+			<section>
+				<h2>Datos de Seguridad</h2>
+				<div class="grupo">
+					<label for="contraseña">Contraseña:</label>
+					<input type="password" id="contraseña" required>
+				</div>
+				<div class="grupo">
+					<label for="repetir-contraseña">Repetir contraseña:</label>
+					<input type="password" id="repetir-contraseña" required>
+				</div>
+				<div class="grupo">
+					<label for="pregunta-seguridad">Pregunta de seguridad:</label>
+					<select id="pregunta-seguridad" required>
+						<option value="">Seleccione una pregunta</option>
+						<option value="nombre-madre">Nombre de tu madre</option>
+						<option value="nombre-mascota">Nombre de tu mascota</option>
+						<option value="lugar-nacimiento">Lugar de nacimiento</option>
+					</select>
+				</div>
+				<div class="grupo">
+					<label for="respuesta-seguridad">Respuesta:</label>
+					<input type="text" id="respuesta-seguridad" required>
+				</div>
+			</section>
+			<div class="grupo">
+				<label for="terminos">Acepto los términos y condiciones:</label>
+				<input type="checkbox" id="terminos" required>
+			</div>
+			<button type="submit">Crear cuenta</button>
+		</form>
+	</div>
+</body>
+</html>
+
