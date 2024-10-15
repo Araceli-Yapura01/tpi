@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Académica</title>
+    <link rel="stylesheet" href="estilos12.css">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <span>Bienvenido</span>
+            <button>Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Menú</h2>
+            <nav>
+                <ul>
+                    <li>Técnica</li>
+                    <li>Bachillerato</li>
+                </ul>
+            </nav>
+        </aside>
+            <section id="tecnica-content" class="content-section active">
+                <h2>Técnica</h2>
+                <div class="info-group">
+                    <h3>Boletines de Notas</h3>
+                    <p>Aquí podrás consultar los boletines de notas de tu hijo/a.</p>
+                    <button class="view-button" data-target="notas-tecnica">Ver Boletines</button>
+                    <div class="content-hidden" id="notas-tecnica">
+                        <a href="#" class="download-button">Descargar Boletín</a>
+                    </div>
+                </div>
+                <div class="info-group">
+                    <h3>Listado de Materias y Profesores</h3>
+                    <p>Encuentra el listado de materias y profesores de cada curso.</p>
+                    <button class="view-button" data-target="materias-tecnica">Ver Listado</button>
+                    <div class="content-hidden" id="materias-tecnica">
+                    </div>
+                </div>
+            </section>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Colegio Provincial Dr. Ernesto Guevara</p>
+    </footer>
+
+    <script src="jvsp.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #006680, #000000); /* Degradado azul a negro */
+    color: white; /* Letras blancas */
+    font-size: 60px;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}

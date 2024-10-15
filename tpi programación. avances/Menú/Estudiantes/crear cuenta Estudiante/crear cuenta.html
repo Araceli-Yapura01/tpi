@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear una Cuenta</title>
+    <link rel="stylesheet" href="estilo2.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1 style="font-size: 50px; color: #f9f9f9; text-align: center;">Crear una Cuenta</h1>
+        <form id="form-registro">
+            <section>
+                <h2>Datos Personales</h2>
+                <div class="grupo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="grupo">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" required>
+                </div>
+                <div class="grupo">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha-nacimiento" required>
+                </div>
+                <div class="grupo">
+                    <label for="genero">Género:</label>
+                    <select id="genero" required>
+                        <option value="">Seleccione un género</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </section>
+            <section>
+                <h2>Datos de Contacto</h2>
+                <div class="grupo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" required>
+                </div>
+                <div class="grupo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+            </section>
+            <section>
+                <h2>Datos de Seguridad</h2>
+                <div class="grupo">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" required>
+                </div>
+                <div class="grupo">
+                    <label for="repetir-contraseña">Repetir contraseña:</label>
+                    <input type="password" id="repetir-contraseña" required>
+                </div>
+                <div class="grupo">
+                    <label for="pregunta-seguridad">Pregunta de seguridad:</label>
+                    <select id="pregunta-seguridad" required>
+                        <option value="">Seleccione una pregunta</option>
+                        <option value="nombre-madre">Nombre de tu madre</option>
+                        <option value="nombre-mascota">Nombre de tu mascota</option>
+                        <option value="lugar-nacimiento">Lugar de nacimiento</option>
+                    </select>
+                </div>
+                <div class="grupo">
+                    <label for="respuesta-seguridad">Respuesta:</label>
+                    <input type="text" id="respuesta-seguridad" required>
+                </div>
+            </section>
+            <div class="grupo">
+                <label for="terminos">Acepto los términos y condiciones:</label>
+                <input type="checkbox" id="terminos" required>
+            </div>
+            <button type="submit">Crear cuenta</button>
+        </form>
+    </div>
+
+    <script>
+        const formRegistro = document.getElementById('form-registro');
+
+        formRegistro.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+            const genero = document.getElementById('genero').value;
+            const correo = document.getElementById('correo').value;
+            const telefono = document.getElementById('telefono').value;
+            const contraseña = document.getElementById('contraseña').value;
+            const repetirContraseña = document.getElementById('repetir-contraseña').value;
+            const preguntaSeguridad = document.getElementById('pregunta-seguridad').value;
+            const respuestaSeguridad = document.getElementById('respuesta-seguridad').value;
+
+            let validacion = true;
+
+            // Validaciones de los campos del formulario
+            if (nombre.length < 3) {
+                alert('El nombre debe tener al menos 3 caracteres.');
+                validacion = false;
+            }
+
+            if (apellido.length < 3) {
+                alert('El apellido debe tener al menos 3 caracteres.');
+                validacion = false;
+            }
+
+            if (fechaNacimiento === "") {
+                alert('Por favor, selecciona una fecha de nacimiento.');
+                validacion = false;
+            }
+
+            if (genero === "") {
+                alert('Por favor, selecciona un género.');
+                validacion = false;
+            }
+
+            const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!correoRegex.test(correo)) {
+                alert('Por favor, ingresa un correo electrónico válido.');
+                validacion = false;
+            }
+
+            if (telefono.length < 10) {
+                alert('El número de teléfono debe tener al menos 10 dígitos.');
+                validacion = false;
+            }
+
+            if (contraseña.length < 8) {
+                alert('La contraseña debe tener al menos 8 caracteres.');
+                validacion = false;
+            } else {
+                // Validación de la contraseña (mayúsculas, minúsculas, números y caracteres especiales)
+                const mayusculaRegex = /[A-Z]/;
+                const minusculaRegex = /[a-z]/;
+                const numeroRegex = /[0-9]/;
+                const especialRegex = /[^A-Za-z0-9]/;
+
+                if (!mayusculaRegex.test(contraseña) || !minusculaRegex.test(contraseña) || !numeroRegex.test(contraseña) || !especialRegex.test(contraseña)) {
+                    alert('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial.');
+                    validacion = false;
+                }
+            }
+
+            if (contraseña !== repetirContraseña) {
+                alert('Las contraseñas no coinciden.');
+                validacion = false;
+            }
+
+            if (preguntaSeguridad === "") {
+                alert('Por favor, selecciona una pregunta de seguridad.');
+                validacion = false;
+            }
+
+            if (respuestaSeguridad.length < 5) {
+                alert('La respuesta de seguridad debe tener al menos 5 caracteres.');
+                validacion = false;
+            }
+
+            if (validacion) {
+                // Redirige a la página de bienvenida
+                window.location.href = "Bienvenidos/bienvenidos.html";
+            }
+        });
+    </script>
+</body>
+</html>

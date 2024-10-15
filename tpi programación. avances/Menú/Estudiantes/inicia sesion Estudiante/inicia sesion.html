@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="estilo3.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1 style="font-size: 50px; color: #f9f9f9; text-align: center;">Iniciar Sesión</h1>
+        <form id="form-login">
+            <section>
+                <div class="grupo">
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="text" id="usuario" required>
+                </div>
+                <div class="grupo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="grupo">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" required>
+                </div>
+                <div class="grupo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" required>
+                </div>
+                <div class="grupo">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" required>
+                </div>
+            </section>
+            <div class="grupo">
+                <label for="terminos">Acepto los términos y condiciones:</label>
+                <input type="checkbox" id="terminos" required>
+            </div>
+            <button type="submit">Iniciar</button>
+        </form>
+    </div>
+
+    <script>
+        const formLogin = document.getElementById('form-login');
+
+        formLogin.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const usuario = document.getElementById('usuario').value;
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const correo = document.getElementById('correo').value;
+            const contraseña = document.getElementById('contraseña').value;
+
+            let validacion = true;
+
+            if (usuario.length < 3) {
+                alert('El nombre de usuario debe tener al menos 3 caracteres.');
+                validacion = false;
+            }
+
+            if (nombre.length < 5) {
+                alert('El nombre debe tener al menos 5 caracteres.');
+                validacion = false;
+            }
+
+            if (apellido.length < 3) {
+                alert('El apellido debe tener al menos 3 caracteres.');
+                validacion = false;
+            }
+
+            const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!correoRegex.test(correo)) {
+                alert('Por favor, ingresa un correo electrónico válido.');
+                validacion = false;
+            }
+
+            // Puedes agregar más validaciones para la contraseña
+
+            if (validacion) {
+                // Redirige a la página de bienvenida en otra carpeta
+                window.location.href ="Bienvenidos/bienvenidos.html"; 
+            }
+        });
+    </script>
+</body>
+</html>
